@@ -11,6 +11,7 @@ import browserslist from 'browserslist'
  * - The following browserlist targets are mapped to equivalents with the same version number:
  *   "and_chr" to "chrome", "and_ff" to "firefox", "ie_mob" to "ie" and "ios_saf" to "safari".
  * - For minor versions or ranges (like ios_saf 12.1-13.3), the oldest version specified is used.
+ * - For duplicate targets, only the oldest version is used.
  */
 
 const TARGETS = ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari', 'samsung']
@@ -21,7 +22,7 @@ const REGEX = /([0-9]+)(.*)/
 export default function getBrowserslistTargets() {
   let list = browserslist(browserslist.loadConfig({ path: process.cwd() }))
 
-  // Split names and numbers so we can operate on names only
+  // Split names and numbers so we can operate on names or numbers individually
   list = list.map(item => item.split(' '))
   // Filter out bogus versions such as "TP" or "all"
   list = list.filter(([name, number]) => REGEX.test(number))
@@ -35,9 +36,7 @@ export default function getBrowserslistTargets() {
   list = list.filter(([name, number], index, self) => self.findIndex(([otherName, otherNumber]) => otherName === name && otherNumber < number) === -1)
   // Join names and numbers back together
   list = list.map(item => item.join(''))
-  // Sort the list alphabetically
-  list = list.sort()
-  // Remove duplicates and sort the list
+  // Remove duplicates and sort the list alphabetically
   list = [...new Set(list)].sort()
 
   return list

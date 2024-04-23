@@ -40,6 +40,10 @@ The following browserlist targets are mapped to equivalents with the same versio
 
 For minor versions or ranges (like `ios_saf 12.1-13.3`), the oldest version specified is used (`ios_saf 12`).
 
+### 6. Multiple versions behavior
+
+For duplicate targets, only the oldest version is used.
+
 ## Dependencies
 
 This package requires ["browserslist"](https://www.npmjs.com/package/browserslist).
