@@ -29,12 +29,12 @@ The following target versions are NOT supported:
 ### 3. Supported targets
 
 The following browserslist targets ARE supported:
-"chrome", "edge", "firefox", "ie", "opera", "safari" and "samsung".
+`chrome`, `edge`, `firefox`, `ie`, `opera`, `safari` and `samsung`.
 
 ### 4. Targets mapped to equivalents
 
 The following browserlist targets are mapped to equivalents with the same version number:
-`and_chr` to `chrome`, "and_ff" to "firefox", "ie_mob" to "ie" and "ios_saf" to "safari".
+`and_chr` to `chrome`, `and_ff` to `firefox`, `ie_mob` to `ie` and `ios_saf` to `safari`.
 
 ### 5. Version ranges behavior
 
