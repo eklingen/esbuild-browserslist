@@ -1,6 +1,6 @@
 {
   "name": "@eklingen/esbuild-browserslist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use Browserslist definition as ESBuild targets.",
   "repository": {
     "type": "git",
